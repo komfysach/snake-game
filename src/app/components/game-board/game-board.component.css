@@ -1,0 +1,45 @@
+.game-board {
+  display: flex;
+  justify-content: center;
+}
+
+.game-board > svg {
+  background-color: #216800;
+  width: 600px;
+  height: 600px;
+}
+
+.game-board rect.cell {
+  fill: #216800;
+  filter: drop-shadow(0 0 10px #25df008f);
+}
+
+@keyframes glow {
+  0% {
+    filter: drop-shadow(0 0 5px #ff0000) drop-shadow(0 0 10px #ff0000)
+      drop-shadow(0 0 15px #ff0000) drop-shadow(0 0 20px #ff0000);
+  }
+  30% {
+    filter: drop-shadow(0 0 5px #00ff00) drop-shadow(0 0 10px #00ff00)
+      drop-shadow(0 0 15px #00ff00) drop-shadow(0 0 20px #00ff00);
+  }
+  60% {
+    filter: drop-shadow(0 0 5px #0000ff) drop-shadow(0 0 10px #0000ff)
+      drop-shadow(0 0 15px #0000ff) drop-shadow(0 0 20px #0000ff);
+  }
+  100% {
+    filter: drop-shadow(0 0 5px #ff0000) drop-shadow(0 0 10px #ff0000)
+      drop-shadow(0 0 15px #ff0000) drop-shadow(0 0 20px #ff0000);
+  }
+}
+
+.trippy {
+  animation: glow 1s infinite;
+}
+
+@media screen and (max-width: 768px) {
+  .game-board > svg {
+    width: 400px;
+    height: 410px;
+  }
+}
