@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+html,
+body {
+  background-color: black;
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+  height: 100dvh;
+  overflow: hidden;
+}
