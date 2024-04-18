@@ -1,0 +1,35 @@
+<div class="game-board">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    role="img"
+    aria-label="Game Board"
+    [ngClass]="{ trippy: snakeService.switchControls }"
+  >
+    <g *ngFor="let cell of cells; let i = index">
+      <rect
+        [attr.x]="getColumn(i) * 20"
+        [attr.y]="getRow(i) * 20"
+        width="20"
+        height="20"
+        class="cell"
+      />
+      <image
+        *ngIf="isFood(getRow(i), getColumn(i))"
+        [attr.x]="getColumn(i) * 20"
+        [attr.y]="getRow(i) * 20"
+        width="20"
+        height="20"
+        [attr.href]="getFoodImage(getRow(i), getColumn(i))"
+        class="food"
+      />
+      <rect
+        *ngIf="isSnake(getRow(i), getColumn(i))"
+        [attr.x]="getColumn(i) * 20"
+        [attr.y]="getRow(i) * 20"
+        width="20"
+        height="20"
+        class="snake"
+      />
+    </g>
+  </svg>
+</div>
