@@ -34,6 +34,11 @@ export class GameBoardComponent implements OnInit, OnDestroy {
   handleKeypress(event: KeyboardEvent) {
     this.keyPresses.push(event.key);
 
+    // Enter to reset the game
+    if (event.key === 'Enter') {
+      this.resetGame();
+    }
+
     // Only keep the last 6 keys
     if (this.keyPresses.length > 6) {
       this.keyPresses.shift();
@@ -53,6 +58,11 @@ export class GameBoardComponent implements OnInit, OnDestroy {
   }
 
   startGame(): void {
+    // clear interval if it exists
+    if (this.intervalId) {
+      window.clearInterval(this.intervalId);
+    }
+
     this.intervalId = window.setInterval(() => {
       const food = this.foodService.foods.find((food) =>
         this.snakeService.isAtPosition(food.position)
