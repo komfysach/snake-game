@@ -39,7 +39,8 @@ The game ends once the snake collides with itself or the border of the plane. A 
 
 ### Score Tracking
 
-The player can track the score within the game.
+The player can track the score within the game. There is also a high score that gets set into local storage so the 
+player can keep track of their high score.
 
 ### Restart
 
